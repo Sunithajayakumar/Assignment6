@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+</head>
+<div class="row">
+    <div class="col-md-12">
+          <br>
+          <h2>Students</h2>
+          <hr />
+
+          <p>TODO: render a list of all student first and last names here</p>
+
+    </div>
+</div>
+
+<body>
+    {{>welcome}}
+    <h1>Student Information</h1>
+    First Name: {{ data.fname }}
+    Last Name: {{ data.lname }}
+    Gender: {{ data.gender }}
+    City: {{ data.city }}
+
+    
+</body>
+<div class="row">
+    <main class="col-md-12">
+        <br>
+        <h2>{{student.firstName}} {{student.lastName}} - Student: {{student.studentNum}}</h2>
+        <hr />
+
+        <form method="post" action="/student/update">
+            <input type="hidden" name="studentNum" value="{{student.studentNum}}" />
+
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>First Name:</label>
+                            <input class="form-control" name="firstName" type="text" value="{{student.firstName}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Last Name:</label>
+                            <input class="form-control" name="lastName" type="text" value="{{student.lastName}}" />
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <hr />
+
+            <input type="submit" class="btn btn-primary float-right" value="Update Student" /><br /><br /><br />
+        </form>
+    </main>
+</div>
+
+</html>
